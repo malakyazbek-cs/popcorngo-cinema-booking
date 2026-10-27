@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/booking_management_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="30dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/filter_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Back"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_filter_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_filter_title"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/tv_filter_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter Bookings"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="25dp"/>
+
+            <TextView
+                android:id="@+id/tv_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BOOKING STATUS"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_filter_title"/>
+
+            <Spinner
+                android:id="@+id/spinner_status_filter"
+                style="@drawable/input_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:prompt="@string/select_booking_status"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status_label" />
+
+            <EditText
+                android:id="@+id/et_start_date"
+                android:background="@drawable/input_background"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="false"
+                android:hint="Start Date"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toStartOf="@id/et_end_date"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_status_filter" />
+
+            <EditText
+                android:id="@+id/et_end_date"
+                android:background="@drawable/input_background"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="false"
+                android:hint="End Date"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/et_start_date"
+                app:layout_constraintTop_toBottomOf="@id/spinner_status_filter" />
+
+            <EditText
+                android:id="@+id/et_showtime_movie"
+                android:background="@drawable/input_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="8dp"
+                android:hint="Movie Title"
+                android:inputType="text"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_start_date" />
+
+            <EditText
+                android:id="@+id/et_user_search"
+                android:background="@drawable/input_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="8dp"
+                android:hint="Username or ID"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_showtime_movie" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/et_user_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btn_clear_filters"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear"
+                    android:backgroundTint="#FF0000"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="20dp" />
+
+                <Button
+                    android:id="@+id/btn_apply_filters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:backgroundTint="#FF8C00"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bookings List"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="30dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="30dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

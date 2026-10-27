@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="0dp">
+
+        <TextView
+            android:text="🎥 ShowTimes"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Movie"
+                    android:textSize="20sp"
+                    android:textColor="#FF0000"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerMovies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvShowtimesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Showtimes :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="30dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="30dp"
+            android:textColor="@android:color/black"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvShowtimes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="96dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddShowtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="24dp"
+        app:tint="@android:color/white"
+        app:backgroundTint="#FF0000"
+        android:contentDescription="Add Showtime"
+        android:src="@drawable/add"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

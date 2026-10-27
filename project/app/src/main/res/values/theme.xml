@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.YourApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
+    </style>
+
+    <style name="Widget.AppCompat.ListView.DropDown" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:maxHeight">50dp</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+</resources>

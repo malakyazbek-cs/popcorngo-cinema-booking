@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seatSelectionRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F5F5F5"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/tvShowtimeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your Seat(s)"
+        android:textSize="28sp"
+        android:textColor="#212121"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:paddingBottom="55dp"/>
+
+    <GridLayout
+        android:id="@+id/gridSeats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        android:padding="15dp"
+        android:background="@drawable/input_background"
+        android:elevation="4dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/btnConfirmSeats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Selection"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:backgroundTint="#FF8C00"
+        android:textColor="@android:color/white"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
+
+</LinearLayout>
